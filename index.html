@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dynamic Dark/Light UI</title>
+</head>
+<body>
+  <div class="nav-div">
+    <button onclick="ToggleVolume()" class="button-2-sound" id="sound-btn"><img src="icons/volume.png" id="sound-btn-img" alt="volume icon" width="35" height="35"></button>
+    <a href="https://github.com/Skander-Ezzeddine/Dynamic-Dark-Light-UI-Website" target="_blank" class="button-2-source-code font" id="code-btn"><img src="icons/github.png" alt="github icon" id="github-icon" width="25" height="25">Source Code</a>
+  </div>
+  <div class="content-div">
+    <h1 class="font" id="warning-text"><img src="icons/warning.png" alt="warning icon" width="32px"> This button makes a sound when you click it <img src="icons/warning.png" alt="warning icon" width="32px"></h1>
+    <button class="button-1 font" onclick="toggleDarkMode()" id="color-btn">Light Mode</button>
+      <audio src="sounds/sound-on.mp3" id="sound-on"></audio>
+      <audio src="sounds/sound-off.mp3" id="sound-off"></audio>
+    </div>
+
+    <div class="notification-mute" id="notification-mute">
+      <img id="notification-img" src="icons/mute.png" alt="mute icon" width="30" height="30">
+      <div>
+        <h4>Sound Muted!</h4>
+        <p id="notification-description">All sounds have been disabled.</p>
+      </div>
+      <button onclick="CloseNotification()" id="notification-btn">✖</button>
+    </div>
+
+    <div class="notification-mute" id="notification-unmute">
+      <img id="notification-img" src="icons/volume.png" alt="mute icon" width="30" height="30">
+      <div>
+        <h4>Sound Enabled!</h4>
+        <p id="notification-description">All sounds have been enabled.</p>
+      </div>
+      <button onclick="CloseNotification()" id="notification-btn">✖</button>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Dynamic Dark/Light UI. All rights reserved. Designed & Developed by <a id="footer-a" href="https://github.com/Skander-Ezzeddine" target="_blank">Skander Ezzeddine</a>.</p>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
