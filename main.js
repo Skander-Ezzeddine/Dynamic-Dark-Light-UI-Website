@@ -55,13 +55,28 @@ function toggleDarkMode(){
         }
     }
 
+let muteTimeout;
 function ToggleVolume(){
     if (SoundOn.volume === 1){
         SoundOn.volume = 0
         SoundOff.volume = 0
         SoundBtnImg.src = "icons/mute.png"
+
         NotificationMute.style.display = "flex"
         NotificationMute.style.animation = "notification-animation-open 0.5s ease-in-out"
+
+        clearTimeout(muteTimeout);
+
+        // Disparaître après 3 secondes (3000 ms)
+        muteTimeout = setTimeout(() => {
+            NotificationMute.style.animation = "notification-animation-close 0.5s ease-in-out forwards";
+            
+            // Masquer complètement une fois l'animation de fermeture terminée
+            setTimeout(() => {
+                NotificationMute.style.display = "none";
+            }, 500); 
+        }, 3000);
+
     }
     else {
         SoundOn.volume = 1
@@ -69,6 +84,13 @@ function ToggleVolume(){
         NotificationUnmute.style.display = "flex"
         NotificationUnmute.style.animation = "notification-animation-open 0.5s ease-in-out"
         SoundBtnImg.src = "icons/volume.png"
+
+        setTimeout(() => {
+            NotificationUnmute.style.animation = "notification-animation-close 0.5s ease-in-out forwards";
+            setTimeout(() => {
+                NotificationUnmute.style.display = "none";
+            }, 500);
+        }, 3000);
     }
 }
 
